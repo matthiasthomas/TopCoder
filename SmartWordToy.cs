@@ -95,35 +95,17 @@ namespace Test
 
             char[] previousWord(char[] word, int index)
             {
-                char[] result = new char[4];
-                for (int i = 0; i < word.Length; i++)
-                {
-                    if (i == index)
-                    {
-                        result[i] = previous(word[i]);
-                    }
-                    else
-                    {
-                        result[i] = word[i];
-                    }
-                }
+                char[] result = new char[word.Length];
+                word.CopyTo(result, 0);
+                result[index] = previous(word[index]);
                 return result;
             }
 
             char[] nextWord(char[] word, int index)
             {
-                char[] result = new char[4];
-                for (int i = 0; i < word.Length; i++)
-                {
-                    if (i == index)
-                    {
-                        result[i] = next(word[i]);
-                    }
-                    else
-                    {
-                        result[i] = word[i];
-                    }
-                }
+                char[] result = new char[word.Length];
+                word.CopyTo(result, 0);
+                result[index] = next(word[index]);
                 return result;
             }
 
