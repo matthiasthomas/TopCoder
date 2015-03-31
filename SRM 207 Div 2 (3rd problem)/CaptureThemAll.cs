@@ -56,22 +56,12 @@ namespace Test
             {
                 LinkedList<Node> result = new LinkedList<Node>();
                 int[][] possibleMoves = new int[8][];
-                //Find location 2 front + 1 left
-                possibleMoves[0] = new int[] { 2, -1 };
-                //Find location 2 front + 1 right
-                possibleMoves[1] = new int[] { 2, 1 };
-                //Find location 2 back + 1 left
-                possibleMoves[2] = new int[] { -2, -1 };
-                //Find location 2 back + 1 right
-                possibleMoves[3] = new int[] { -2, 1 };
-                //Find location 1 front + 2 left
-                possibleMoves[4] = new int[] { 1, -2 };
-                //Find location 1 back + 2 left
-                possibleMoves[5] = new int[] { -1, -2 };
-                //Find location 1 front + 2 right
-                possibleMoves[6] = new int[] { 1, 2 };
-                //Find location 1 back + 2 right
-                possibleMoves[7] = new int[] { -1, 2 };
+                int[] x = new int[] { 2, 2, -2, -2, 1, -1, 1, -1 };
+                int[] y = new int[] { -1, 1, -1, 1, -2, -2, 2, 2 };
+                for (int i = 0; i < 8; i++)
+                {
+                    possibleMoves[i] = new int[] { x[i], y[i] };
+                }
 
                 for (int i = 0; i < possibleMoves.Length; i++)
                 {
